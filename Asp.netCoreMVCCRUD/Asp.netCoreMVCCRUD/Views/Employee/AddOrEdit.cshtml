@@ -1,0 +1,52 @@
+﻿@model Asp.netCoreMVCCRUD.Models.Employee
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Employee Form</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="AddOrEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="EmployeeId" />
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="EmpCode" class="control-label"></label>
+                    <input asp-for="EmpCode" class="form-control" />
+                    <span asp-validation-for="EmpCode" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Position" class="control-label"></label>
+                    <input asp-for="Position" class="form-control" />
+                    <span asp-validation-for="Position" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="OfficeLocation" class="control-label"></label>
+                <input asp-for="OfficeLocation" class="form-control" />
+                <span asp-validation-for="OfficeLocation" class="text-danger"></span>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="submit" value="Submit" class="btn btn-primary btn-block" />
+                </div>
+                <div  class="form-group col-md-6">
+                    <a asp-action="Index"  class="btn btn-secondary btn-block"><i class="fa fa-table"></i> Back to List</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

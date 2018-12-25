@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Asp.netCoreMVCCRUD.Models.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h4>Employee Register</h4>
+<hr />
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OfficeLocation)
+            </th>
+            <th>
+                <a asp-action="AddOrEdit" class="btn btn-outline-success"><i class="far fa-plus-square"></i> Employee</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OfficeLocation)
+            </td>
+            <td>
+                <a asp-action="AddOrEdit" asp-route-id="@item.EmployeeId"><i class="fa fa-marker fa-lg"></i></a>
+                <a asp-action="Delete" asp-route-id="@item.EmployeeId" class="text-danger ml-1" onclick="return confirm('Are you sure to delete this record?')"><i class="fa fa-trash-alt fa-lg"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
