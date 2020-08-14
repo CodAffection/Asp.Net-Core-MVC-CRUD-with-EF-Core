@@ -10,6 +10,9 @@ $ git clone https://github.com/CodAffection/Asp.Net-Core-MVC-CRUD-with-EF-Core.g
 
  ## How it works ?
 
+ :scroll: Article on this topic  
+ Url : https://goo.gl/n5YM54
+ 
  :tv: Video tutorial on this same topic  
  Url : https://youtu.be/AHqIrJ_PlPY
  
